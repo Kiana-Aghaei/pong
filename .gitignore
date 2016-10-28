@@ -1,0 +1,8 @@
+node_modules
+DS_Store
+build/*.js
+build/*.json
+build/fonts
+bablerc
+pakage.json
+webpack.config.js
