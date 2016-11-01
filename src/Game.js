@@ -13,8 +13,8 @@ export default class Game {
         this.context = canvas.getContext('2d');
         this.context.fillStyle = 'white';
         this.board = new Board(this.height, this.width)
-        this.p1 = new Paddle(this.height, 5, 'turquoise', player1Keys)
-        this.p2 = new Paddle(this.height, this.width - 10, 'turquoise', player2Keys)
+        this.player1 = new Paddle(this.height, 5, 'turquoise', player1Keys)
+        this.player2 = new Paddle(this.height, this.width - 10, 'turquoise', player2Keys)
 
         this.ball = new Ball();
     }
@@ -23,10 +23,10 @@ export default class Game {
     render(context){
 
         this.board.render(this.context)
-        this.p1.render(this.context)
-        this.p2.render(this.context)
+        this.player1.render(this.context)
+        this.player2.render(this.context)
 
-        this.ball.render(this.context)
+        this.ball.render(this.context, this.player1, this.player2, this.sounds)
 
 
     }

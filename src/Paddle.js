@@ -7,13 +7,9 @@ export default class Paddle {
       this.color = color;
       this.x = x;
       this.y = (boardHeight /2) - (this.height / 2);
-      this.boardHeight = boardHeight;
+      this.maxHeight = boardHeight;
       this.keys = keys;
       document.addEventListener('keydown', event => this.keyListener(event));
-  }
-
-  wallBounce(){
-
   }
 
 keyListener(event) {
@@ -23,22 +19,32 @@ keyListener(event) {
       break;
     case this.keys.down:
       this.moveDown();
+      // console.log('hi');
+
       break;
         default: return;
   }
 }
 
   moveUp() {
-    if(this.y - this.speed >= 0) {
+    // if(this.y - this.speed >= 0) {
+    if (this.y >= 3) {
       this.y -= this.speed;
     }
   }
 
 moveDown() {
-  if (this.y + this.height + this.speed <= this.boardHeight) {
+  // if (this.y + this.height + this.speed <= this.boardHeight) {
+  if (this.y <= 97){
     this.y += this.speed;
+
 }
 }
+
+scoreMethod() {
+   this.score += 1;
+}
+
   render(context) {
 
     context.fillStyle = this.color;
