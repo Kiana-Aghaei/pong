@@ -1,7 +1,8 @@
 import Paddle from './Paddle'
-import {player1Keys, player2Keys} from './keys'
 import Ball from './Ball'
 import Board from './Board'
+import {p1Keys, p2Keys} from './keys'
+import ScoreBoard from './Score'
 
 const gap = 10
 
@@ -13,21 +14,22 @@ export default class Game {
         this.context = canvas.getContext('2d');
         this.context.fillStyle = 'white';
         this.board = new Board(this.height, this.width)
-        this.player1 = new Paddle(this.height, 5, 'turquoise', player1Keys)
-        this.player2 = new Paddle(this.height, this.width - 10, 'turquoise', player2Keys)
-
-        this.ball = new Ball();
+        this.p1 = new Paddle(this.height, 5, 'turquoise', p1Keys)
+        this.p2 = new Paddle(this.height, this.width - 10, 'turquoise', p2Keys)
+        this.ball = new Ball()
+        this.p1Score = new ScoreBoard(225, 85);
+        this.p2Score = new ScoreBoard(75,85);
     }
 
 
     render(context){
 
-        this.board.render(this.context)
-        this.player1.render(this.context)
-        this.player2.render(this.context)
-
-        this.ball.render(this.context, this.player1, this.player2, this.sounds)
-
+        this.board.render(this.context);
+        this.p1.render(this.context);
+        this.p2.render(this.context);
+        this.ball.render(this.context, this.p1, this.p2, this.p1Score, this.p2Score );
+        this.p1Score.render(this.context);
+        this.p2Score.render(this.context);
 
     }
 
