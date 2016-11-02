@@ -14,8 +14,8 @@ export default class Game {
         this.context = canvas.getContext('2d');
         this.context.fillStyle = 'white';
         this.board = new Board(this.height, this.width)
-        this.p1 = new Paddle(this.height, 5, 'turquoise', p1Keys)
-        this.p2 = new Paddle(this.height, this.width - 10, 'turquoise', p2Keys)
+        this.p1 = new Paddle(this.height, 5, '#FF7619', p1Keys)
+        this.p2 = new Paddle(this.height, this.width - 10, '#FF7619', p2Keys)
         this.ball = new Ball()
         this.p1Score = new ScoreBoard(225, 85);
         this.p2Score = new ScoreBoard(75,85);
