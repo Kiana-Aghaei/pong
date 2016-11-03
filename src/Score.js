@@ -6,7 +6,7 @@ export default class ScoreBoard {
     }
     draw(context) {
         context.font = "20px Helvetica";
-        context.fillStyle = "sandybrown"
+        context.fillStyle = "#ff9d5d"
         context.fillText(this.score, this.x, this.y);
     }
     render(context) {

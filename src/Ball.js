@@ -7,14 +7,14 @@ export default class Ball {
     this.vy = Math.floor(Math.random() * 12 - 6);
     this.vx = (7 - Math.abs(this.vy));
     this.speed = 5;
-    this.size = size;
+    this.size = 5;
 
   }
 
 drawBall(context) {
   context.fillStyle = "white"
   context.beginPath();
-  context.arc(this.x, this.y, 5, 0, Math.PI * 2, true);
+  context.arc(this.x, this.y, this.size, 0, Math.PI * 2, true);
   context.closePath();
 }
 
